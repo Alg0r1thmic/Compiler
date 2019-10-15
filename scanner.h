@@ -5,6 +5,7 @@
 
 using std::cout;
 using std::vector;
+
 class Scanner
 {
 public:
