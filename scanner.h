@@ -1,10 +1,8 @@
 #ifndef SCANNER_H
 #define SCANNER_H
-#include <iostream>
-#include <fstream>
-#include <string>
-#include <vector>
-#include <algorithm>
+
+#include <bits/stdc++.h>
+
 using std::cout;
 using std::vector;
 class Scanner
