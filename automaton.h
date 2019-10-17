@@ -11,10 +11,7 @@ class Automaton
 public:
     Automaton();
     void inputFile();
-    void readFile();
-    int stringToInt(string input);
     void getClausura();
-    void proofInputFile();
     void NFA_To_DFA();
 private:
     vector<int> R,Clausura,states,acceptanceStates,entries;
