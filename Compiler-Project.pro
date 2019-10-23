@@ -18,7 +18,8 @@ SOURCES += \
         automaton.cpp \
         main.cpp \
         scanner.cpp \
-        tokenizer.cpp
+        tokenizer.cpp \
+        utils.cpp
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -28,7 +29,8 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 HEADERS += \
     automaton.h \
     scanner.h \
-    tokenizer.h
+    tokenizer.h \
+    utils.h
 
 DISTFILES += \
     compilermodel.qmodel

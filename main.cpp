@@ -4,6 +4,7 @@
 #include <iostream>
 #include <fstream>
 #include <automaton.h>
+#include "utils.h"
 using namespace Scanner;
 /*void proofScanner(){
     Scanner *scaner=new Scanner;
@@ -30,9 +31,19 @@ void proof(){
     std::cout << "\n\n";
 
 }
+void proofUtils(){
+
+    Utils u;
+    /*string input;
+    getline(cin,input);
+    cout << "Result is: " << u.evaluatePostfixExpression(input) << endl;*/
+    u.tok=u.scanner();
+    u.exp();
+    cout << "resul is: " << u.evaluatePostfixExpression(u.getExp()) << endl;
+}
 int main(int argc, char *argv[])
 {
-    Automaton automata;
+    /*Automaton automata;
     automata.inputFile();
     int num,input;
     vector<int> R;
@@ -47,5 +58,6 @@ int main(int argc, char *argv[])
     //automata.getClausura();
     //automata.readFile();
     //automata.getClausura();
-
+*/
+  proofUtils();
 }
