@@ -34,7 +34,17 @@ int main(int argc, char *argv[])
 {
     Automaton automata;
     automata.inputFile();
-    automata.getClausura();
+    int num,input;
+    vector<int> R;
+    vector<int> Re;
+    cin >> num;
+    for (int i=0;i<num;i++) {
+        cin >> input;
+        R.push_back(input);
+    }
+    R=automata.getClausura(R);
+
+    //automata.getClausura();
     //automata.readFile();
     //automata.getClausura();
 

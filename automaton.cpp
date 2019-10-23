@@ -7,7 +7,7 @@ Automaton::Automaton()
 
 void Automaton::inputFile()
 {
-    ifstream inputFile("test1.txt",ios::in);
+    ifstream inputFile("test2.txt",ios::in);
     if(!inputFile)
     {
         cerr << "not open file" << endl;
@@ -38,18 +38,13 @@ void Automaton::inputFile()
             transitions.insert({second,{first,third}});
         }
         for (const auto& s : transitions) {
-            cout <<s.second.first <<"<-->" << s.first <<"<-->"<<s.second.second <<  endl;
+            //cout <<s.second.first <<"<-->" << s.first <<"<-->"<<s.second.second <<  endl;
         }
     }
 }
-void Automaton::getClausura()
+vector<int> Automaton::getClausura(vector<int> r)
 {
-    int num,input;
-    cin >> num;
-    for (int i=0;i<num;i++) {
-        cin >> input;
-        R.push_back(input);
-    }
+    this->R=R;
     for(const auto& op : R){
         Clausura.push_back(op);
         m_stack.push(op);
@@ -62,17 +57,19 @@ void Automaton::getClausura()
                 if(!(std::find(Clausura.begin(),Clausura.end(),itr.second.second)!=Clausura.end()))
                     Clausura.push_back(itr.second.second);
                 m_stack.push(itr.second.second);
-                //cout << "enter" << endl;
             }
         }
     }
     cout << "clausure" << endl;
     for(const auto& cur:Clausura){
-        cout << cur <<endl;
+        cout <<"estados--->"<< cur << endl;
     }
+    return Clausura;
 }
 
-void Automaton::NFA_To_DFA()
-{
+void Automaton::NFA_To_DFA(){
+    d_states.insert({"nomarcado",getClausura(initialState)});
+    while(d_states.find("nomarcado")!=d_states.end()){
 
+    }
 }
